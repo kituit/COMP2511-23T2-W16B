@@ -1,4 +1,4 @@
-package example;
+
 public class Shouter {
     private String message;
 
