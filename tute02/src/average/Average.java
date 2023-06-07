@@ -36,6 +36,7 @@ public class Average {
         // so we can access the method by just referencing the class it is
         // part of
         float result2 = Average.computeAverageStatic(nums);
+        // object.method()
 
     }
 
