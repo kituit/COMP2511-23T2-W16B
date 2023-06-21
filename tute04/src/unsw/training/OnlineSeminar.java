@@ -8,7 +8,7 @@ import java.util.List;
  * @author Robert Clifton-Everest
  *
  */
-public class OnlineSeminar extends Seminar {
+public class OnlineSeminar implements SeminarInterface {
     private String videoURL;
 
     private List<String> watched;

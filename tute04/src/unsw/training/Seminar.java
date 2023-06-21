@@ -8,7 +8,7 @@ import java.util.List;
  * @author Robert Clifton-Everest
  *
  */
-public class Seminar {
+public class Seminar implements SeminarInterface {
     private LocalDate start;
 
     private List<String> attendees;
@@ -19,5 +19,16 @@ public class Seminar {
 
     public List<String> getAttendees() {
         return attendees;
+    }
+
+    public LocalDate bookTraining(String employee, List<LocalDate> availability) {
+        for (LocalDate available : availability) {
+            if (start.equals(available) &&
+                    attendees.size() < 10) {
+                attendees.add(employee);
+                return available;
+            }
+        }
+        return null;
     }
 }
