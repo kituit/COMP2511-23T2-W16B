@@ -1,5 +1,6 @@
 package wondrous.test;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -18,4 +19,30 @@ public class WondrousTest {
         
         assertEquals(expected, w.wondrous(3));
     }
+
+    @Test
+    public void testStarterIsOne() {
+        Wondrous w = new Wondrous();
+        List<Integer> expected = new ArrayList<Integer>();
+        
+        assertEquals(expected, w.wondrous(1));
+    }
+
+    @Test
+    public void testStarterIsLessThanOne() {
+        Wondrous w = new Wondrous();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            w.wondrous(0);
+        });
+
+        Runnable runnable = () -> {
+            System.out.println("Hello world");
+        };
+        runnable.run();
+
+
+        
+    }
+
 }

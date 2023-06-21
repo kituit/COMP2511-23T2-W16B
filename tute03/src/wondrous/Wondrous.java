@@ -11,6 +11,15 @@ public class Wondrous {
         int current = start;
         List<Integer> sequence = new ArrayList<Integer>();
 
+        if (start < 1) {
+            throw new IllegalArgumentException();
+        }
+
+
+        if (start == 1) {
+            return sequence;
+        }
+
         while (current != 1) {
             sequence.add(current);
             if (current % 2 == 0) {
@@ -19,6 +28,8 @@ public class Wondrous {
                 current = (current * 3) + 1;
             }
         }
+
+        sequence.add(1);
 
         return sequence;
     }
