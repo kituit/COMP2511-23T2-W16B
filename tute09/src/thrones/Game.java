@@ -44,7 +44,7 @@ public class Game {
     
     
     public static void main(String[] args) {
-        Game game = new Game();
+        // Game game = new Game();
 
         /*
         game.addCharacter(new King(0, 0));
@@ -52,6 +52,61 @@ public class Game {
         game.addCharacter(new Queen(2, 2));
         */
 
-        game.play();
+        // game.play();
+
+
+
+
+
+        Character king = new King(0, 0);
+        System.out.println("Initial health: " + king.getHealthPoints());
+        
+        king.damage(5);
+        System.out.println("Taken damage: " + king.getHealthPoints()); // health should have reduced by 5 points
+        
+        king = new ChainmailDecorator(king);
+        king.damage(5);
+        System.out.println("Taken damage: " + king.getHealthPoints()); // health should have reduced by 5/2 = 2 points
+        king = new HelmetDecorator(king);
+        king = new ChestplateDecorator(king);
+        king.damage(10);
+
+
+
+
     }
+
+
+
+Employee e = new Director()
+e.addEmployee();
+
+if (e instanceof Director) {
+    ((Director) e).addEmployee();
+}
+
+Manager m = new Director();
+m.approveExprense();
+if (e instanceof) {
+    ((Director) m).approveExprense();
+}
+
+
+
+
+public class Account {
+    private double balance;
+    public Account (double balance) { this.balance = balance; }
+
+    // other getter and setter for balance
+}
+public class Savings extends Account {
+    private double interestRate;
+    
+    public Savings(double rate) {
+        super(100);
+        this.interestRate = rate;
+    }
+}
+
 }   
