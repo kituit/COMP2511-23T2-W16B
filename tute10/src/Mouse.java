@@ -10,5 +10,14 @@ public class Mouse implements ComputerComponent {
     public String toString() {
         return name;
     }
+
+    // @Override
+    // public void visit() {
+    //     System.out.println("Looking at mouse " + name + " mouse.");
+    // }
     
+    @Override
+    public void accept(ComputerVisitor visitor) {
+        visitor.visitMouse(this);
+    }
 }

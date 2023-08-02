@@ -16,6 +16,17 @@ public class Computer implements ComputerComponent {
     public int getMemory() {
         return memory;
     }
+
+    @Override
+    public void accept(ComputerVisitor visitor) {
+        visitor.visitComputer(this);
+    }
+
+    // @Override
+    // public void visit() {
+    //     System.out.println("Looking at computer " + name + " with memory " + memory + " GB.");
+    // }
+
     
 
 }

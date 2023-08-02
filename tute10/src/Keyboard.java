@@ -21,4 +21,14 @@ public class Keyboard implements ComputerComponent {
         return name;
     }
 
+    // @Override
+    // public void visit() {
+    //     System.out.println("Looking at keyboard " + name + " keyboard which has " + numKeys + " keys.");
+    // }
+
+    @Override
+    public void accept(ComputerVisitor visitor) {
+        visitor.visitKeyboard(this);
+    }
+
 }
